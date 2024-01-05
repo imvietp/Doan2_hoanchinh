@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Smart Aquarium</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo-2.webp">
+</head>
+<body>
+    <div id="toast">    
+    </div>
+    <div id="app">
+        <header class="header">
+            <img class="header-logo" src="./assets/img/logo-3.svg" alt="logo">
+            <h1 class="header-title"> SMART AQUARIUM
+            </h1>
+            <div class="header-search-wrap">
+                <input class="header-search" type="search" name="" placeholder="Search" id="">
+            </div>
+            <div onclick="showToast()" class="header-mess">
+                <i class="fa-regular fa-message fa-flip-horizontal"></i>
+            </div>
+            <div onclick="showToast()" class="header-setting">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+            <span class="user-name">Project 2</span>
+            <div class="user-img">
+                <img src="./assets/img/logo hcmute.png" alt="">
+                <ul class="user-wrapper">
+                    <li class="user-item">
+                        <p>Thông tin</p>
+                    </li>
+                    <li class="user-item">
+                        <p>Liên hệ</p>
+                    </li>
+                    <li class="user-item">
+                        <p>Đăng xuất</p>
+                    </li>
+                </ul>
+                
+            </div>
+        </header>
+        <div class="container">
+            <menu class="menu">
+                <div class="page-control active">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-fish-fins"></i>
+                    </div>
+                    <span class="menu-title">Home</span>
+                </div>
+                <div class="page-control">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+                    <span class="menu-title">Temperature</span>
+                </div>
+                <div class="page-control">
+                    <div class="menu-icon">
+                        <i class="fa-sharp fa-solid fa-droplet"></i>
+                    </div>
+                    <span class="menu-title">turbidity</span>
+                </div>
+                <div class="page-control">
+                    <div class="menu-icon">
+                        <i class="fa-sharp fa-solid fa-pump-soap"></i>
+                    </div>
+                    <span class="menu-title">PUMP</span>
+                </div>
+                <div class="page-control">
+                    <div class="menu-icon">
+                        <i class="fa-solid fa-cookie"></i>
+                    </div>
+                    <span class="menu-title">FEED</span>
+                </div>
+            </menu>
+            <div class="main-content">
+                <div class="content active">
+                    <div class="home-content__top">
+                        <div class="info-1">
+                            <div class="aqua-tank-img">
+                                <img src="./assets/img/hình_hồ_cáa-removebg-preview.png" alt="">
+                            </div>
+                        </div>
+                        <div class="info-2">
+                            <section>
+                                <div class="container">
+                                    <div class="icons">
+                                        <i class="fas fa-moon"></i>
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <div class="time">
+                                        <div class="time-colon">
+                                        <div class="time-text">
+                                            <span class="num hour_num"></span>
+                                            <span class="text">Hours</span>
+                                        </div>
+                                        <span class="colon">:</span>
+                                        </div>
+                                        <div class="time-colon">
+                                        <div class="time-text">
+                                            <span class="num min_num"></span>
+                                            <span class="text">Minutes</span>
+                                        </div>
+                                        <span class="colon">:</span>
+                                        </div>
+                                        <div class="time-colon">
+                                        <div class="time-text">
+                                            <span class="num sec_num"></span>
+                                            <span class="text">Seconds</span>
+                                        </div>
+                                        <span class="am_pm">AM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="home-content__bot">
+                            <span class="weather__currentday"></span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="room-wrapper">
+                        <div class="content__sensor">
+                            <div class="content__sensor-1">
+                                <div class="sensor-quantity">
+                                    <h2 class="sensor-name">
+                                        <i class="fa-sharp fa-solid fa-circle"></i>
+                                        Temperature
+                                    </h2>
+                                    <div class="sensor-img">
+                                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                                        <span id="nhietdo"></span> <span>&deg;C</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="room-wrapper">
+                        <div class="content__sensor">
+                            <div class="content__sensor-1">
+                                <div class="sensor-quantity">
+                                    <h2 class="sensor-name">
+                                        <i class="fa-sharp fa-solid fa-circle"></i>
+                                        Turbidity
+                                    </h2>
+                                    <div class="sensor-img">
+                                        <i class="fa-solid fa-droplet"></i>
+                                        <span id="doduc"></span> <span>FTU</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="room-wrapper">
+                        <div class="pump-control">
+                            <div class="auto-control">
+                                <span class="control-text">AUTO MODE</span>
+                                <div class="control-button">
+                                    <span>TURN ON/OFF</span>
+                                    <div class="toggle">
+                                        <div class="toggle-btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="manual-control">
+                                <span class="control-text">MANUAL MODE</span>
+                                <div class="control-button">
+                                    <div class="pump-btn">
+                                        <span>PUMP</span>
+                                        <div class="toggle">
+                                            <div class="toggle-btn"></div>
+                                        </div>
+                                    </div>
+                                    <div class="drain-btn">
+                                        <span>DRAIN</span>
+                                        <div class="toggle">
+                                            <div class="toggle-btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pump-performance">
+                            <div class="water-level-quantity">
+                                <span>Current water level:</span>
+                                <span id="mucnuoc"></span>
+                                <span>cm</span>
+                            </div>
+                            <div class="water-level-img">
+                                <img id="tank-performance" src="./assets/img/WaterTank.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="room-wrapper">
+                        <div class="feeding-control">
+                            <span class="feeding-text">FEEDING THE FISH</span>
+                            <div class="feeding-btn">
+                                <span>TURN ON/OFF</span>
+                                <div class="toggle">
+                                    <div class="toggle-btn"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feeding-timer">
+                            <span class="feeding-text">SET UP TIME TO FEED</span>
+                            <div class="feeding-timer__input">
+                                <input type="text" name="" id="timeInput" placeholder="Nhập thời gian (h:mm:ss)">
+                                <button onclick="sendToFirebase()" class="timer-btn">SET</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+        </footer>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+    <script src="./index.js"></script>
+</body>
+</html>
